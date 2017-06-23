@@ -28,5 +28,9 @@ def generate_sentences(user, number=5):
     for i in range(number):
         print(model.make_sentence());
 
-generate_sentences(get_model('chalcedon'));
-
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) == 2:
+        generate_sentences(sys.argv[1]);
+    elif len(sys.argv) == 3:
+        generate_sentences(sys.argv[1], int(sys.argv[2]));
